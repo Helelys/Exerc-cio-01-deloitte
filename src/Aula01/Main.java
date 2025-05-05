@@ -62,8 +62,6 @@ public class Main {
 
          */ // Exercício 4
 
-        //teste
-
         teclado.close();
     }
 }
