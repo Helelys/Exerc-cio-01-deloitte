@@ -1,5 +1,8 @@
 package Aula02;
 
+import Aula02.frota.Caminhao;
+import Aula02.frota.Carro;
+
 import java.util.Scanner;
 
 public class Main {
@@ -32,5 +35,10 @@ public class Main {
         produto1.darDesconto();
 
          */ // Exercício 04, desconto de produto
+
+        Carro carro = new Carro("Renault", "Sandero", 2020, 4);
+        Caminhao caminhao = new Caminhao("Guerra", "Robusto", 2020, 50);
+
+        System.out.printf(carro.toString());
     }
 }
