@@ -36,7 +36,5 @@ public class Main {
          */ // Exercício 04, desconto de produto
 
         Carro carro = new Carro("Renault", "Sandero", 2020, 4);
-
-
     }
 }
