@@ -26,5 +26,11 @@ public class Main {
         cpfTallys.validadorDeCpf();
 
          */ // Exercício 03, validador simples de CPF (Se há 11 dígitos)
+
+        /*
+        Produto produto1 = new Produto("Televisao", 100, 10);
+        produto1.darDesconto();
+
+         */ // Exercício 04, desconto de produto
     }
 }
