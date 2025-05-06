@@ -1,4 +1,4 @@
-package Aula03;
+package Aula02;
 
 public class CalculadoraDeImc {
     private double altura;
