@@ -1,18 +1,12 @@
 package Aula02.frota.veiculos;
 
 import Aula02.frota.Veiculo;
-import Aula02.frota.motoristas.Motorista;
 
 public class Carro extends Veiculo {
     private int num_portas;
 
-    public Carro(String marca, String modelo, int ano, double velocidadeMaxima, int num_portas) {
-        super(marca, modelo, ano, velocidadeMaxima);
-        this.num_portas = num_portas;
-    }
-
-    public Carro(String marca, String modelo, int ano, Motorista motorista, int num_portas) {
-        super(marca, modelo, ano, motorista);
+    public Carro(String marca, String modelo, int ano, int cambio, double velocidadeMaxima, int num_portas) {
+        super(marca, modelo, ano, cambio, velocidadeMaxima);
         this.num_portas = num_portas;
     }
 

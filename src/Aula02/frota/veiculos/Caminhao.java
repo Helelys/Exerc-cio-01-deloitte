@@ -14,13 +14,8 @@ public class Caminhao extends Veiculo {
         this.capacidade_carga = capacidade_carga;
     }
 
-    public Caminhao(String marca, String modelo, int ano, double velocidadeMaxima, double capacidade_carga) {
-        super(marca, modelo, ano, velocidadeMaxima);
-        this.capacidade_carga = capacidade_carga;
-    }
-
-    public Caminhao(String marca, String modelo, int ano, Motorista motorista, double capacidade_carga) {
-        super(marca, modelo, ano, motorista);
+    public Caminhao(String marca, String modelo, int ano, int cambio, double velocidadeMaxima, double capacidade_carga) {
+        super(marca, modelo, ano, cambio, velocidadeMaxima);
         this.capacidade_carga = capacidade_carga;
     }
 

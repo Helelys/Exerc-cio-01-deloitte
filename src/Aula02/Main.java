@@ -5,6 +5,7 @@ import Aula02.frota.motoristas.Motorista;
 import Aula02.frota.veiculos.Caminhao;
 import Aula02.frota.veiculos.Carro;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -38,8 +39,8 @@ public class Main {
 
          */ // Exercício 04, desconto de produto
 
-        Caminhao ivecoSway = new Caminhao("Iveco", "S-Way", 2023, 120, 50.00);
-        Carro hondaCivic = new Carro("Honda", "Civic", 2025, 200, 4);
+        Caminhao ivecoSway = new Caminhao("Iveco", "S-Way", 2020, 5, 120, 50.00);
+        Carro hondaCivic = new Carro("Honda", "Civic", 2025, 6, 100, 4);
 
         Motorista carlos = new Motorista("Carlos", "123456789", ivecoSway);
         Motorista tallys = new Motorista("Tallys", "987654321", hondaCivic);
@@ -52,12 +53,15 @@ public class Main {
         frota.adicionarMotorista(tallys);
         frota.adicionarMotorista(carlos);
 
-        System.out.println(frota);
-
         tallys.dirigir();
-        carlos.dirigir();
+        hondaCivic.setMotorista(tallys);
 
         hondaCivic.acelerar(tallys);
+        hondaCivic.acelerar(tallys);
+        hondaCivic.acelerar(tallys);
+        hondaCivic.acelerar(tallys);
+        hondaCivic.acelerar(tallys);
         hondaCivic.frear(tallys);
+        System.out.println(hondaCivic.getMotorista());
     }
 }
