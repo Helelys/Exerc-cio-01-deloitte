@@ -9,6 +9,8 @@ public class Veiculo {
     private double velocidade = 0;
     private Motorista motorista;
 
+    private double velocidadeMaxima;
+
     public Motorista getMotorista() {
         return motorista;
     }
@@ -78,7 +80,7 @@ public class Veiculo {
                 "marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", ano=" + ano +
-                ", velocidade=" + velocidade +
+                ", velocidade máxima=" + velocidadeMaxima +
                 '}';
     }
 
@@ -86,10 +88,11 @@ public class Veiculo {
         System.out.printf("Sua velocidade atual é: %.2f KM por hora.\n", getVelocidade());
     }
 
-    public Veiculo(String marca, String modelo, int ano) {
+    public Veiculo(String marca, String modelo, int ano, double velocidadeMaxima) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
+        this.velocidadeMaxima = velocidadeMaxima;
     }
 
     public Veiculo() {

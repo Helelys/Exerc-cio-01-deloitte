@@ -38,8 +38,8 @@ public class Main {
 
          */ // Exercício 04, desconto de produto
 
-        Caminhao ivecoSway = new Caminhao("Iveco", "S-Way", 2023, 5);
-        Carro hondaCivic = new Carro("Honda", "Civic", 2020, 4);
+        Caminhao ivecoSway = new Caminhao("Iveco", "S-Way", 2023, 120, 50.00);
+        Carro hondaCivic = new Carro("Honda", "Civic", 2025, 200, 4);
 
         Motorista carlos = new Motorista("Carlos", "123456789", ivecoSway);
         Motorista tallys = new Motorista("Tallys", "987654321", hondaCivic);
