@@ -38,17 +38,23 @@ public class Main {
 
          */ // Exercício 04, desconto de produto
 
-        Caminhao caminhao = new Caminhao("Guerra", "Robusto", 2020, 50);
-        Carro carro = new Carro("Renault", "Sandero", 2020, 4);
+        Caminhao ivecoSway = new Caminhao("Iveco", "S-Way", 2023, 5);
+        Carro hondaCivic = new Carro("Honda", "Civic", 2020, 4);
 
-        Motorista carlos = new Motorista("Carlos", "123456789", carro);
-        carlos.dirigir();
+        Motorista carlos = new Motorista("Carlos", "123456789", ivecoSway);
+        Motorista tallys = new Motorista("Tallys", "987654321", hondaCivic);
 
         Frota frota = new Frota();
 
-        frota.adicionarVeiculo(carro);
+        frota.adicionarVeiculo(hondaCivic);
+        frota.adicionarVeiculo(ivecoSway);
+
+        frota.adicionarMotorista(tallys);
         frota.adicionarMotorista(carlos);
 
         System.out.println(frota);
+
+        tallys.dirigir();
+        carlos.dirigir();
     }
 }
