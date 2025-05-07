@@ -52,18 +52,26 @@ public class Motorista{
 
     public void dirigir() {
         if (getVeiculoAtual() == null) {
-            System.out.printf("%s não tem veículo.", getNome());
+            System.out.printf("\n%s não tem veículo.\n", getNome());
         } else {
-            System.out.printf("%s está dirigindo um %s %s", getNome(), getVeiculoAtual().getMarca(), getVeiculoAtual().getModelo());
+            System.out.printf("\n%s está dirigindo um %s %s\n", getNome(), getVeiculoAtual().getMarca(), getVeiculoAtual().getModelo());
         }
     }
 
     @Override
     public String toString() {
-        return "Motorista{" +
-                "nome='" + nome + '\'' +
-                ", cnh='" + cnh + '\'' +
-                ", veiculoAtual=" + veiculoAtual +
-                '}';
+        if (getVeiculoAtual() == null) {
+            return "Motorista{" +
+                    "nome='" + nome + '\'' +
+                    ", cnh='" + cnh + '\'' +
+                    ", veiculoAtual= Não há veículo." +
+                    '}';
+        } else {
+            return "Motorista{" +
+                    "nome='" + nome + '\'' +
+                    ", cnh='" + cnh + '\'' +
+                    ", veiculoAtual=" + veiculoAtual +
+                    '}';
+        }
     }
 }
