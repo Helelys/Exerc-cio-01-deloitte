@@ -1,6 +1,8 @@
-package Aula02.frota;
+package Aula02.frota.veiculos;
 
-public class Caminhao extends Veiculo{
+import Aula02.frota.Veiculo;
+
+public class Caminhao extends Veiculo {
     private double capacidade_carga;
 
     public double getCapacidade_carga() {

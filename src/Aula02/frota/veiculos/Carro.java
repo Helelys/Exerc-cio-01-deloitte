@@ -1,6 +1,8 @@
-package Aula02.frota;
+package Aula02.frota.veiculos;
 
-public class Carro extends Veiculo{
+import Aula02.frota.Veiculo;
+
+public class Carro extends Veiculo {
     private int num_portas;
 
     public Carro(String marca, String modelo, int ano, int num_portas) {
