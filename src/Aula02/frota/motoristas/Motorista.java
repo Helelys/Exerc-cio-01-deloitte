@@ -57,4 +57,13 @@ public class Motorista{
             System.out.printf("%s está dirigindo um %s %s", getNome(), getVeiculoAtual().getMarca(), getVeiculoAtual().getModelo());
         }
     }
+
+    @Override
+    public String toString() {
+        return "Motorista{" +
+                "nome='" + nome + '\'' +
+                ", cnh='" + cnh + '\'' +
+                ", veiculoAtual=" + veiculoAtual +
+                '}';
+    }
 }

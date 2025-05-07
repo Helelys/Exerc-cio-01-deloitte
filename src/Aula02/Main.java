@@ -1,5 +1,6 @@
 package Aula02;
 
+import Aula02.frota.frota.Frota;
 import Aula02.frota.motoristas.Motorista;
 import Aula02.frota.veiculos.Caminhao;
 import Aula02.frota.veiculos.Carro;
@@ -42,5 +43,12 @@ public class Main {
 
         Motorista carlos = new Motorista("Carlos", "123456789", carro);
         carlos.dirigir();
+
+        Frota frota = new Frota();
+
+        frota.adicionarVeiculo(carro);
+        frota.adicionarMotorista(carlos);
+
+        System.out.println(frota);
     }
 }
