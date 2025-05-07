@@ -1,7 +1,8 @@
 package Aula02;
 
-import Aula02.frota.Caminhao;
-import Aula02.frota.Carro;
+import Aula02.frota.motoristas.Motorista;
+import Aula02.frota.veiculos.Caminhao;
+import Aula02.frota.veiculos.Carro;
 
 import java.util.Scanner;
 
@@ -36,9 +37,10 @@ public class Main {
 
          */ // Exercício 04, desconto de produto
 
-        Carro carro = new Carro("Renault", "Sandero", 2020, 4);
         Caminhao caminhao = new Caminhao("Guerra", "Robusto", 2020, 50);
+        Carro carro = new Carro("Renault", "Sandero", 2020, 4);
 
-        System.out.printf(carro.toString());
+        Motorista carlos = new Motorista("Carlos", "123456789", carro);
+        carlos.dirigir();
     }
 }
