@@ -56,5 +56,8 @@ public class Main {
 
         tallys.dirigir();
         carlos.dirigir();
+
+        hondaCivic.acelerar(tallys);
+        hondaCivic.frear(tallys);
     }
 }

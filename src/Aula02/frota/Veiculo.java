@@ -1,10 +1,21 @@
 package Aula02.frota;
 
+import Aula02.frota.motoristas.Motorista;
+
 public class Veiculo {
     private String marca;
     private String modelo;
     private int ano;
     private double velocidade = 0;
+    private Motorista motorista;
+
+    public Motorista getMotorista() {
+        return motorista;
+    }
+
+    public void setMotorista(Motorista motorista) {
+        this.motorista = motorista;
+    }
 
     public double getVelocidade() {
         return velocidade;
@@ -38,23 +49,23 @@ public class Veiculo {
         this.velocidade = velocidade;
     }
 
-    public void acelerar() {
-        System.out.printf("Você acelerou 10km!\n");
+    public void acelerar(Motorista motorista) {
+        System.out.printf("%s acelerou 10km!/h\n", motorista.getNome());
         double velocidadeAtual = getVelocidade() + 10;
         setVelocidade(velocidadeAtual);
     }
 
-    public void desacelerar() {
+    public void desacelerar(Motorista motorista) {
         if (getVelocidade() > 0) {
-            System.out.printf("Você desacelerou!");
+            System.out.printf("%s desacelerou 10Km/h\n", motorista.getNome());
             double velocidadeAtual = getVelocidade() - 10;
             setVelocidade(velocidadeAtual);
         } else {
-            System.out.printf("Você está parado!\n");
+            System.out.printf("%s está parado!\n", motorista.getNome());
         }
     }
 
-    public void frear() {
+    public void frear(Motorista motorista) {
         if (getVelocidade() > 0) {
             System.out.printf("Você freou!\n");
             setVelocidade(0);
@@ -82,5 +93,12 @@ public class Veiculo {
     }
 
     public Veiculo() {
+    }
+
+    public Veiculo(String marca, String modelo, int ano, Motorista motorista) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.motorista = motorista;
     }
 }
