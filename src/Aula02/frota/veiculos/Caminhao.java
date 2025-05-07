@@ -1,6 +1,7 @@
 package Aula02.frota.veiculos;
 
 import Aula02.frota.Veiculo;
+import Aula02.frota.motoristas.Motorista;
 
 public class Caminhao extends Veiculo {
     private double capacidade_carga;
@@ -13,8 +14,8 @@ public class Caminhao extends Veiculo {
         this.capacidade_carga = capacidade_carga;
     }
 
-    public Caminhao(String marca, String modelo, int ano, double capacidade_carga) {
-        super(marca, modelo, ano);
+    public Caminhao(String marca, String modelo, int ano, int cambio, double velocidadeMaxima, double capacidade_carga) {
+        super(marca, modelo, ano, cambio, velocidadeMaxima);
         this.capacidade_carga = capacidade_carga;
     }
 

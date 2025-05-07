@@ -2,12 +2,34 @@ package Aula02.frota;
 
 import Aula02.frota.motoristas.Motorista;
 
+import java.util.Random;
+
 public class Veiculo {
     private String marca;
     private String modelo;
     private int ano;
     private double velocidade = 0;
     private Motorista motorista;
+    private int cambio = 1;
+    private double velocidadeMaxima;
+    Random randomNumero = new Random();
+    private int chanceDeMorrer = randomNumero.nextInt(10) + 1;
+
+    public int getCambio() {
+        return cambio;
+    }
+
+    public void setCambio(int cambio) {
+        this.cambio = cambio;
+    }
+
+    public double getVelocidadeMaxima() {
+        return velocidadeMaxima;
+    }
+
+    public void setVelocidadeMaxima(double velocidadeMaxima) {
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
 
     public Motorista getMotorista() {
         return motorista;
@@ -66,9 +88,44 @@ public class Veiculo {
     }
 
     public void frear(Motorista motorista) {
-        if (getVelocidade() > 0) {
-            System.out.printf("Você freou!\n");
+        if (getVelocidade() > 0 && getVelocidade() < 20) {
+            System.out.println("Você freou!");
             setVelocidade(0);
+        } else if (getVelocidade() > 20 && getVelocidade() < 40) {
+            System.out.println("Você capotou! Suas chances de sobrevivência são boas! Você...");
+            if (chanceDeMorrer > 2) {
+                System.out.println("Você sobreviveu!");
+            } else {
+                System.out.println("Você morreu. Notificaremos sua família.");
+                setMotorista(null);
+            }
+        } else if (getVelocidade() > 40 && getVelocidade() < 60 ) {
+            System.out.println("Você capotou! Suas chances de sobrevivência são complicadas, mas você...");
+            if (chanceDeMorrer > 4) {
+                System.out.println("Você sobreviveu.");
+            } else {
+                System.out.println("Você morreu. Notificaremos sua família.");
+                setMotorista(null);
+            }
+        } else if (getVelocidade() > 60) {
+            System.out.println("Você capotou! Suas chances de sobreviver são baixas, você...");
+            if (chanceDeMorrer > 6) {
+                System.out.println("Você sobreviveu!");
+            } else {
+                System.out.println("Você morreu. Notificaremos sua família.");
+                setMotorista(null);
+            }
+        } else if (getVelocidade() == getVelocidadeMaxima()) {
+            System.out.println("Você capotou! Suas chances de sobrevivência são péssimas, você... ");
+            if (chanceDeMorrer > 9) {
+                System.out.println("Você sobreviveu!");
+            } else {
+                System.out.println("Você morreu. Notificaremos sua família.");
+                setMotorista(null);
+            }
+        } else {
+            System.out.println("Você está muito rápido para frear! Vamos desacelerar.");
+            desacelerar(motorista);
         }
     }
 
@@ -78,7 +135,7 @@ public class Veiculo {
                 "marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", ano=" + ano +
-                ", velocidade=" + velocidade +
+                ", velocidade máxima=" + velocidadeMaxima +
                 '}';
     }
 
@@ -86,19 +143,14 @@ public class Veiculo {
         System.out.printf("Sua velocidade atual é: %.2f KM por hora.\n", getVelocidade());
     }
 
-    public Veiculo(String marca, String modelo, int ano) {
+    public Veiculo(String marca, String modelo, int ano, int cambio, double velocidadeMaxima) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
+        this.cambio = cambio;
+        this.velocidadeMaxima = velocidadeMaxima;
     }
 
     public Veiculo() {
-    }
-
-    public Veiculo(String marca, String modelo, int ano, Motorista motorista) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.ano = ano;
-        this.motorista = motorista;
     }
 }
